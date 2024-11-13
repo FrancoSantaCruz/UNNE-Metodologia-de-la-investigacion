@@ -189,7 +189,7 @@
  *
 **/
 .fichas-inicio {
-  width: 100vw;
+  width: 100%;
   margin-bottom: 300px;
 }
 .fichas-inicio .fichas-titulo {
@@ -209,7 +209,23 @@
   justify-content: space-evenly;
   grid-template-columns: repeat(5, 170px);
   grid-template-rows: 4fr 4fr;
+  grid-auto-rows: minmax(350px, auto);
   row-gap: 50px;
+}
+@media (max-width: 1200px) {
+  .fichas-inicio .fichas-grid {
+    grid-template-columns: repeat(4, 1fr); /* Cambia a 4 columnas */
+  }
+}
+@media (max-width: 992px) {
+  .fichas-inicio .fichas-grid {
+    grid-template-columns: repeat(3, 1fr); /* Cambia a 3 columnas */
+  }
+}
+@media (max-width: 768px) {
+  .fichas-inicio .fichas-grid {
+    grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas */
+  }
 }
 .fichas-inicio .fichas-grid a {
   text-decoration: none;

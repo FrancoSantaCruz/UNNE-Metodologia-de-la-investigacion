@@ -56,14 +56,15 @@
 }
 
 .presidente-inicio {
-  width: 100vw;
+  width: 100%;
   margin-bottom: 150px;
   margin-top: 180px;
 }
 .presidente-inicio .presidente-titulo {
-  width: 600px;
-  margin: 50px 200px 0;
-  font-size: 22px;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 50px auto;
+  font-size: 18px;
 }
 .presidente-inicio .presidente-titulo h1 {
   color: white;
@@ -131,19 +132,20 @@
 }
 
 .fichas-container {
-  display: grid;
-  grid-template-columns: 6fr 4fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   height: -moz-fit-content;
   height: fit-content;
-  justify-content: center;
 }
 
 .card-page {
-  min-width: 1280px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 300px;
+  width: 100%;
+  max-width: 900px;
 }
 
 .card-container {
@@ -245,10 +247,9 @@
 }
 
 .xtrainfo-page {
-  min-width: 450px;
-  display: flex;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: 100%;
+  min-width: 300px;
+  max-width: 450px;
 }
 
 .xtrainfo-container {

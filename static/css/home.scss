@@ -203,7 +203,7 @@
 
 
 .fichas-inicio {
-    width: 100vw;
+    width: 100%;
     margin-bottom: 300px;
 
     & .fichas-titulo {
@@ -227,8 +227,21 @@
         justify-content: space-evenly;
         grid-template-columns: repeat(5, 170px);
         grid-template-rows: 4fr 4fr;
+        grid-auto-rows: minmax(350px, auto);
         // column-gap: 100px;
         row-gap: 50px;
+
+        @media (max-width: 1200px) {
+                grid-template-columns: repeat(4, 1fr); /* Cambia a 4 columnas */
+        }
+        
+        @media (max-width: 992px) {
+                grid-template-columns: repeat(3, 1fr); /* Cambia a 3 columnas */
+        }
+        
+        @media (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas */
+        }
 
         & a {
             text-decoration: none;
