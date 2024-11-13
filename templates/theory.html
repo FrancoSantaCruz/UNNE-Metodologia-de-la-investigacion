@@ -1,16 +1,404 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block styles %}{% endblock styles %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/theory.css' %}">{% endblock styles %}
 
-{% block title %}{% endblock title %}
+{% block title %}TALLER 1{% endblock title %}
 
 
 {% block header %}
-<h1>THEORY</h1>
+<nav class="theory-nav">
+    <div class="theory-nav-logo">
+        <img src="{% static 'images/logo-grupo.png' %}" alt="logo grupo 3">
+    </div>
+    <div class="theory-nav-links">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'theory' %}">Taller 1</a>
+        <a href="{% url 'cards' %}">Tecnicas de Fichaje</a>
+    </div>
+</nav>
 {% endblock header %}
 
 
 {% block content %}
+<section class="fuentes">
+    <h1 class="fuentes-titulo">FUENTES DE INFORMACION</h1>
 
+    <p class="fuentes-texto">La expresión «fuentes de información» es empleada comúnmente en la literatura profesional,
+        a pesar de que no existe coincidencia sobre su sentido exacto. Isabel de Torres opina que «con el término fuente
+        tomado en sentido amplio puede nombrarse cualquier material o producto, ya sea original o elaborado, que tenga
+        potenciabilidad para aportar noticias o informaciones o que pueda usarse como testimonio para acceder al
+        conocimiento»</p>
+    <p class="fuentes-texto">En un sentido más estricto, Isabel Villaseñor, partiendo de la definición de “fuente” que
+        se realiza en el, indica que «el término “fuentes de información” se identifica con el concepto de principio,
+        fundamento y origen de la información, es decir, el punto del que se parte y al que se accede para conseguirla»
+    </p>
+    <p class="fuentes-texto">Los autores anteriores realizan una clasificación de las obras de referencia basándose en
+        la información que proporcionan:</p>
+
+    <div class="fuentes-obras-container">
+        <div class="fuentes-obras">
+            <p class="fuentes-obras-titulo">obras de referencia de información directa o inmediata</p>
+            <p class="fuentes-obras-texto">son aquellas que proporcionan directamente la información sin necesidad de
+                tener
+                que recurrir a otra fuente.</p>
+        </div>
+        <div class="fuentes-obras">
+            <p class="fuentes-obras-titulo">obras de referencia de información indirecta o diferida</p>
+            <p class="fuentes-obras-texto">no proporcionan directamente la información, sino la descripción de los
+                documentos susceptibles de contenerla.</p>
+        </div>
+    </div>
+
+    <h3 class="fuentes-subtitulo">CLASIFICACION DE LAS FUENTES</h3>
+
+    <p class="fuentes-texto">De forma muy genérica, las fuentes pueden clasificarse en función del tipo de información
+        que recogen o de la clase de demandas informativas que resuelven.</p>
+    <p class="fuentes-texto">Desde esta perspectiva, existirían los siguientes tipos de fuentes de información:</p>
+
+    <!-- Modal Triggers -->
+    <div class="modal-grid">
+
+
+
+        <div class="modal-card" data-modal="modal1">
+            <h3>Informativas</h3>
+            <p>Información sobre recursos de información</p>
+        </div>
+        <div class="modal-card" data-modal="modal2">
+            <h3>Personales</h3>
+            <p>Información sobre personas</p>
+        </div>
+        <div class="modal-card" data-modal="modal3">
+            <h3>Institucionales</h3>
+            <p>Información sobre empresas, organismos, asociaciones, etc.</p>
+        </div>
+
+
+
+        <div class="modal-card" data-modal="modal4">
+            <h3>Bibliográficas</h3>
+            <p> Información sobre monografías, publicaciones seriadas y otros documentos editados</p>
+        </div>
+        <div class="modal-card" data-modal="modal5">
+            <h3>Documentales</h3>
+            <p>Información sobre documentos con acceso a su texto completo</p>
+        </div>
+        <div class="modal-card" data-modal="modal6">
+            <h3>Terminológicas</h3>
+            <p>Información lexicográfica y sobre palabras</p>
+        </div>
+
+
+
+        <div class="modal-card" data-modal="modal7">
+            <h3>Geográficas</h3>
+            <p>Información sobre lugares</p>
+        </div>
+        <div class="modal-card" data-modal="modal8">
+            <h3>Históricas</h3>
+            <p>Información sobre acontecimientos</p>
+        </div>
+        <div class="modal-card" data-modal="modal9">
+            <h3>Estadísticas</h3>
+            <p>Información estadística</p>
+        </div>
+
+
+
+        <div class="modal-card" data-modal="modal10">
+            <h3>Normativas</h3>
+            <p>Información legislativa, jurídica y normativa</p>
+        </div>
+        <div class="modal-card" data-modal="modal11">
+            <h3>Temáticas</h3>
+            <p>Información sobre cualquier rama del conocimiento</p>
+        </div>
+        <div class="modal-card" data-modal="modal12">
+            <h3>Técnicas</h3>
+            <p>Información sobre documentos técnicos</p>
+        </div>
+
+
+
+        <div class="modal-card" data-modal="modal13">
+            <h3>Inéditas</h3>
+            <p>Información sobre documentos no publicados</p>
+        </div>
+        <div class="modal-card" data-modal="modal14">
+            <h3>Multimedia</h3>
+            <p>Información sobre documentos audiovisuales</p>
+        </div>
+        <div class="modal-card" data-modal="modal15">
+            <h3>Telemáticas</h3>
+            <p>Información sobre sitios web y otros recursos accesibles en línea</p>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes informativas</h2>
+            <p>Se emplean para localizar otras fuentes de información. Sirven, por tanto, para saber en qué obra o
+                recurso puede ser localizado determinado dato o información necesitada. En esta categoría se encuentran
+                los manuales y repertorios de obras de referencia, las bibliografías de bibliografías, los repertorios
+                de bases de datos, los directorios de buscadores y los directorios analíticos de documentos web.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes personales</h2>
+            <p>Este tipo de recursos se utilizarán para conocer datos referentes a personas: vida, obra, información
+                laboral, etc. En este grupo pueden incluirse las biografías, las enciclopedias y diccionarios
+                biográficos, las enciclopedias generales y especializadas, las bases de datos de biografías, los
+                denominados “Quién es quién” y los directorios de personas.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes institucionales</h2>
+            <p>Las fuentes de información institucionales son aquellas que aportan datos sobre empresas y entidades, ya
+                sean históricos, de localización, de estructura, de su actividad o de cualquier otro tipo. Pueden
+                considerarse pertenecientes a esta categoría los directorios de instituciones, las memorias, las guías
+                institucionales y los anuarios.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal4">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes bibliográficas</h2>
+            <p>Todo recurso que ofrezca información acerca de una publicación puede ser considerado como fuente de
+                información bibliográfica. En sentido estricto se incluyen en esta categoría las fuentes que facilitan
+                descripciones o referencias de monografías, partes de monografías, contribuciones a congresos, artículos
+                de publicaciones periódicas, etc. No obstante, estas fuentes deben extenderse a cualquier tipo de
+                documento en cualquier soporte. Partiendo de esta idea, es posible encontrarse con bases de datos
+                bibliográficas, bibliografías, bibliografías analíticas, boletines de sumarios, boletines de resúmenes,
+                índices acumulativos, repertorios de publicaciones periódicas, índices de citas, catálogos de
+                bibliotecas, catálogos comerciales, boletines de críticas y reseñas, guías de archivos y catálogos de
+                archivos.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal5">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes documentales</h2>
+            <p>En determinados casos, sobre todo para investigaciones de carácter humanístico, es necesario informarse
+                acerca de un documento concreto, pero también poder consultarlo. Para esto sirven las fuentes
+                documentales: antologías, catálogos o colecciones documentales y bibliotecas digitales. Desde ellas se
+                podrán conocer datos de diferentes escritos y, además, examinar su contenido</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal6">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes terminológicas</h2>
+            <p>Los diccionarios son las fuentes de información lexicográfica por excelencia. Pueden ser considerados
+                como tales aquellas obras en las que se da información sobre las voces o expresiones de una determinada
+                lengua, ya sea para definirlas o para ofrecer su traducción a otros idiomas. Existen numerosas
+                clasificaciones de los tipos de diccionarios existentes. Todas ellas parten de divisiones similares a
+                los que desarrolla José Martínez de Sousa, quien en uno de sus diccionarios técnicos57, sistematiza las
+                tipologías de los diccionarios a partir de criterios léxicos (generales, normativos, de autoridades,
+                etimológicos, de argot, etc.), sintagmáticos (de construcción, de modismos, de refranes, de citas,
+                etc.), paradigmáticos (onomasiológicos, ideológicos, de sinónimos, etc.), terminológicos
+                (especializados, tecnológicos, de abreviaciones, de dudas, de incorrecciones, de topónimos, etc.) y
+                enciclopédicos (de materias, regionales, etc.). Además, este autor incluye otras clasificaciones de los
+                diccionarios basadas en aspectos históricos (diacrónicos y sincrónicos), de la lengua (monolingües,
+                bilingües, multilingües), de la presentación (alfabéticos, sistemáticos, etc.), de la forma (abreviados,
+                básicos, escolares, etc.), de la edición (actuales, prácticos, razonados, etc.), formato (breve,
+                bolsillo, etc.) y de la publicación (por entregas, informático, etc.).</p>
+        </div>
+    </div>
+    <div class="modal" id="modal7">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes geográficas</h2>
+            <p>Las fuentes de información geográficas se emplean para obtener datos acerca de un lugar determinado:
+                país, región, localidad, etc. Las obras más habituales de este tipo de fuentes son los mapas, planos y
+                callejeros, los atlas, las guías geográficas, los denominados “estado del mundo”, los diccionarios
+                geográficos y las enciclopedias generales. También hay que incluir como una fuente de información de
+                reciente aparición los servidores de información geográfica. Por lo general, en todos estos tipos de
+                fuentes son muy importantes las imágenes; en muchos casos, más que los textos, dada la información que
+                facilitan.
+                Las fuentes de información geográficas básicas son los mapas, representaciones más o menos detalladas de
+                un área. Por lo general, los planos son equivalentes a los mapas, pero con una doble acepción. Por una
+                parte, pueden ser considerados mapas con un mayor nivel de detalle o escala y, por otra parte, se
+                entiende también como plano la imagen esquematizada de un lugar, ya sea para destacar su relieve,
+                hidrografía, comunicaciones o cualquier otro aspecto.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal8">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes históricas</h2>
+            <p>Las fuentes de información histórica sirven para conocer los acontecimientos sucedidos a lo largo del
+                tiempo. Aunque podrían ser consideradas fuentes temáticas, es preferible contemplarlas como una
+                tipología independiente, ya que las fuentes históricas pueden referirse a cualquier disciplina, aparte
+                de la historia, como una de las ciencias sociales. Pueden considerarse dentro de este grupo de obras de
+                referencia las cronologías, los anuarios, los almanaques, los atlas históricos, las enciclopedias
+                generales y las monografías especializadas.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal9">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes estadísticas</h2>
+            <p>Las estadísticas son indispensables para conocer datos numéricos correspondientes a una actividad o
+                institución. Si la presentación se realiza de forma anual, entonces se denominan anuarios estadísticos.
+                Un ejemplo es el Anuario estadístico de Castilla y León. Las estadísticas pueden estar elaboradas por
+                empresas especializadas o por organismos públicos, como ocurre en España con el Instituto Nacional de
+                Estadística, que difunde sus estadísticas a través de los servicios denominados Banco de datos Tempus e
+                INEbase.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal10">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes normativas</h2>
+            <p>Las publicaciones generadas por los órganos legislativos y judiciales son de gran valor e interés.
+                Existen múltiples recursos para localizar este tipo de información. Como fuentes primarias o directas
+                destacan los boletines oficiales y los textos legislativos y, entre las fuentes de información
+                secundarias o indirectas, se incluirían las bases de datos jurídicas y los repertorios legislativos.
+                También hay que considerar como una fuente de información normativa los portales jurídicos, accesibles
+                en Internet.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal11">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes temáticas</h2>
+            <p>Las informaciones sobre un tema o disciplina se podrán encontrar en enciclopedias, manuales y tratados,
+                monografías especializadas y recursos web.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal12">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes técnicas</h2>
+            <p>Existen diferentes tipos de información especializada, necesaria sobre todo con fines tecnológicos y
+                empresariales. Se trata de las patentes, marcas y las normas técnicas. Las patentes son los documentos
+                que dan derecho a la explotación de un invento; las marcas adjudican la propiedad del uso del nombre de
+                un producto o servicio y las normas son las especificaciones de tipo nacional o internacional que
+                regulan de forma oficial la realización de una determinada actividad o producto. Junto a este tipo de
+                documentos hay que estudiar las fuentes inéditas, ya que a menudo son recogidas de forma conjunta en
+                bases de datos y repertorios. Existen diferentes bases de datos y repertorios de patentes, marcas y
+                normas. La información que facilitan es la misma, pero no la forma de acceso a los datos. Las bases de
+                datos emplean procedimientos automatizados, mientras que los repertorios son obras impresas. No
+                obstante, estos dos tipos de fuentes pueden ser considerados como una misma, ya que en ambas se recopila
+                información similar.</p>
+        </div>
+    </div>
+    <div class="modal" id="modal13">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes inéditas</h2>
+            <p>Las fuentes de información inéditas son aquellas que ofrecen datos acerca de la denominada "literatura
+                gris", es decir, documentos que no han sido publicados y que, por tanto, no han sido distribuidos por
+                los canales editoriales tradicionales. Como literatura gris se conocen los informes, actas de congresos,
+                proyectos de investigación y las traducciones no editadas. Además, se incluyen otras categorías vistas
+                en el apartado anterior, como son las patentes y las normas. La mejor fuente de información de este
+                género son las bases de datos y repertorios de literatura gris, ya sean generales o por tipos de
+                documentos (actas, tesis, traducciones, etc.).
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal14">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes multimedia</h2>
+            <p>En muchas ocasiones será necesario localizar documentos de imagen y/o sonido. Cuando ocurra esto se
+                deberán emplear fuentes de información similares a las anteriormente vistas, en cuanto a la descripción
+                y sistema de acceso a la información, pero especializadas en documentos audiovisuales. Las fuentes de
+                información multimedia son muy similares entre sí, por lo que pueden englobarse en las bases de datos y
+                repertorios de documentos multimedia, aunque también se pueden incluir los buscadores especializados,
+                como un tipo de base de datos de documentos audiovisuales disponibles en Internet.
+            </p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal15">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Fuentes telemáticas</h2>
+            <p>Las fuentes de información telemáticas se emplean recuperar documentos presentes en Internet, ya sean
+                páginas web o de otro tipo. Es importante dejar constancia de que estos recursos son complementarios a
+                muchos de los analizados anteriormente, pero que se diferencian de ellos porque las telemáticas son
+                fuentes que están en Internet y que han sido creadas para localizar documentos que también están en la
+                red. Las categorías de las fuentes que pueden ser consideradas telemáticas son los buscadores, los
+                índices, los portales, los repertorios de recursos telemáticos, los servidores y sitios web en sus
+                múltiples formatos y los sistemas de mensajería.</p>
+        </div>
+    </div>
+
+</section>
+
+<section class="tecnicas-fichaje">
+    <h1 class="fuentes-titulo">TECNICAS DE FICHAJE</h1>
+    <p class="fuentes-texto">
+        Técnica por la cual se construye un instrumento que nos permite guardar en forma escrita,
+        de manera económica, sencilla, lo más completa posible, la información que será necesaria y utilizada a lo largo
+        de toda la investigación.
+    </p>
+    <p class="fuentes-texto">
+        En investigación el fichaje implica: recopilar todo antecedente sobre la temática a investigar haciéndolo a
+        través de un método y sistematizando los datos que serán utilizados. Descripción de la fuente de información que
+        facilita encontrar la misma.
+    </p>
+    <p class="fuentes-texto">
+        El instrumento del fichaje son las fichas, hay diferentes clases:
+    </p>
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header" data-target="content1">
+                <h3>FICHAS BIBLIOGRÁFICAS O ÍNDICES</h3>
+            </div>
+            <div class="accordion-content" id="content1">
+                <p>Estas fichas contienen y detallan las características básicas de la bibliografía a utilizar por el investigador/es en su investigación.</p>
+                <p><strong>Por autores:</strong> supone ordenar las fichas por orden alfabético del primer apellido de cada autor.</p>
+                <p><strong>Por materias:</strong> supone hacer previamente una clasificación de los diversos subtemas de nuestra investigación o de nuestra área de interés</p>
+            </div>
+        </div>
+    
+        <div class="accordion-item">
+            <div class="accordion-header" data-target="content2">
+                <h3>FICHA DE CONTENIDO</h3>
+            </div>
+            <div class="accordion-content" id="content2">
+                <p>Se utilizan para ampliar la información  de la ficha bibliográfica.</p>
+                <p><strong>Textual:</strong> se confecciona una ficha para cada uno de los textos: En el encabezado de la ficha se colocan  los datos bibliográficos del texto.</p>
+                <p>En el cuerpo de la misma, generalmente el reverso de la ficha, se copia textual resúmenes, síntesis u opiniones del investigador.</p>
+            </div>
+        </div>
+    
+        <div class="accordion-item">
+            <div class="accordion-header" data-target="content3">
+                <h3>FICHA DE DOCUMENTACIÓN</h3>
+            </div>
+            <div class="accordion-content" id="content3">
+                <p>Se suelen utilizar en un estadio posterior de la investigación, después de haber leído, analizado y estudiado las fuentes bibliográficas.</p>
+                <p><strong>De resumen:</strong> Los resúmenes tienen una función instrumental, se usan cuando el libro, revista o documento debe ser devuelto. Contiene en forma abreviada, los aspectos más importantes de un tema estudiado.</p>
+                <p><strong>De síntesis:</strong> Se expone las ideas centrales  de un texto, su significación y su unidad de sentido. Es la que se utiliza para consignar, en pocas palabras, el extracto del texto consultado. Contiene una descripción de las ideas principales del autor.</p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/theory.js' %}"></script>
+{% endblock script %}

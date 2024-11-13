@@ -1,0 +1,304 @@
+@import "./variables.scss";
+
+.theory-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.692);
+    z-index: 1000;
+    transition: all 0.3s ease;
+
+    &-logo {
+        height: 100%;
+
+        & img {
+            height: 100%;
+        }
+    }
+    &-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        & a {
+            margin: 25px;
+            font-size: 24px;
+            text-decoration: none;
+            color: $aqua;
+        }
+    }
+    &.small {
+        height: 75px;
+        background-color: rgba(255, 255, 255, 0.9);
+
+        & a {
+            font-size: 16px;
+        }
+    }
+}
+
+
+.presidente-inicio {
+    width: 100vw;
+    margin-bottom: 150px;
+    margin-top: 180px;
+
+    & .presidente-titulo {
+        width: 600px;
+        margin: 50px 200px 0;
+        font-size: 22px;
+
+        & h1 {
+            color: white;
+            border-bottom: 2px solid white;
+            line-height: 1;
+        }
+    }
+
+
+
+    & .presidente-grid {
+        margin-top: 30px;
+        width: 100%;
+        display: grid;
+        justify-content: space-evenly;
+        grid-template-columns: repeat(5, 150px);
+        grid-template-rows: 150px 150px;
+        // column-gap: 100px;
+        row-gap: 25px;
+
+        & a {
+            text-decoration: none;
+        }
+
+        & .presidente-card {
+            width: 170px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+
+            & .presidente-img-container {
+                position: relative;
+                width: 100%;
+
+                & img {
+                    position: absolute;
+                    width: 150px;
+                    height: 150px;
+                    top: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    object-fit: cover;
+                    border-radius: 10%;
+                    overflow: hidden;
+                    border: 2px solid black;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+
+            
+
+            & .presidente-data {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                width: 150px;
+                height: 150px;
+                color: $aqua;
+                position: absolute;
+                top: 20px;
+                left: 10px;
+                border-radius: 10%;
+
+                background-color: rgba(0, 0, 0, 0.699);
+                transition: all 0.8s ease-in-out;
+
+                &-bold {
+                    font-weight: bold;
+                }
+
+    
+            }
+
+            &:hover {
+                & .presidente-data{
+                    display: none;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+.fichas-container{
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    height: fit-content;
+    justify-content: center;
+}
+
+
+
+.card-page{
+    min-width: $screen-xl-min;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 300px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    perspective: 1000px; 
+    width: 900px;
+    min-height: 450px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    transition: transform 0.8s;
+
+    &.flipped {
+        transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 450px;
+        backface-visibility: hidden; 
+        border-radius: 10px;
+    }
+
+    .card-front {
+        background-color: $yellow-ficha;
+    }
+
+    .card-back {
+        background-color: $yellow-ficha;
+        transform: rotateY(180deg); 
+    }
+
+    .tape {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-5deg);
+        width: 80px;
+        height: 20px;
+        background-color: rgba(255, 255, 255, 0.897);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+        z-index: 10;
+    }
+
+    .card-header {
+        font-weight: bold;
+        font-size: $title;
+        border-bottom: 2px solid $black;
+        padding: 10px 15px 5px;
+        background-color: $yellow-ficha;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .card-content {
+        font-size: $text;
+        line-height: 1.7em;
+        min-height: 400px;
+        padding: 0 10px;
+        margin-top: 4px;
+        background-image: repeating-linear-gradient(to bottom,
+                $yellow-ficha,
+                $yellow-ficha calc(1.5em - 1px),
+                $black calc(1.5em - 1px),
+                $black 1.5em);
+        background-size: 700px 1.7em;
+        background-position-y: 0;
+        border-radius: 10px;
+
+        & p {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+            background-color: transparent;
+        }
+    }
+}
+
+.card-btn {
+    display: flex;
+    position: relative;
+    right: 90px;
+    top: 5px;
+    align-self: flex-end;
+    justify-content: center;
+    margin-left: 25px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: 2px solid black;
+    background-color: $aqua;
+
+    & img {
+        display: flex;
+        align-self: center;
+        width: 80%;
+        height: 80%;
+        background-color: transparent;
+    }
+}
+
+
+// EXTRA INFORMATION
+
+.xtrainfo-page{
+    min-width: 450px;
+    display: flex;
+    height: fit-content;
+}
+
+.xtrainfo-container {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    border: 2px solid $aqua;
+    border-radius: 25px;
+    padding: 30px;
+
+    & .xtrainfo-parrafo {
+        color: white !important;
+        margin: 10px 0px;
+
+        & a {
+            color: white;
+            font-weight: bold;
+        }
+
+        &-bold {
+            color: $aqua;
+            font-weight: bold;
+        }
+    }
+}
+

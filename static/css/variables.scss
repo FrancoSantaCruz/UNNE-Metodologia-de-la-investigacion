@@ -1,0 +1,54 @@
+// fonts
+@font-face {
+    font-family: 'Poppins-regular';
+    src: url('../fonts/Poppins-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins-bold';
+    src: url('../fonts/Poppins-Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins-thin';
+    src: url('../fonts/Poppins-Thin.ttf') format('ttf');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+// colors
+$black: #141414;
+$bg-main: #222831;
+$bg-secundary: #393E46;
+$aqua: #00ADB5;
+$white: #EEEEEE;
+$yellow-ficha: #efe4a2;
+
+//buttons
+
+// fonts
+$title: 34px;
+$text: 20px;
+$aux-text: 12px;
+$button: 26px;
+
+//sizes
+$padding: 12px;
+$border-radius: 8px;
+$gap: 0.5rem;
+
+//breakpoints
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1280px;

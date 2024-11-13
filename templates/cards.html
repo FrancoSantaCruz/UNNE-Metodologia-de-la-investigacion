@@ -1,16 +1,126 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block styles %}{% endblock styles %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/cards.css' %}">{% endblock styles %}
 
-{% block title %}{% endblock title %}
+{% block title %}FICHAS{% endblock title %}
 
 
 {% block header %}
-<h1>CARDS</h1>
+<nav class="theory-nav">
+    <div class="theory-nav-logo">
+        <img src="{% static 'images/logo-grupo.png' %}" alt="logo grupo 3">
+    </div>
+    <div class="theory-nav-links">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'theory' %}">Taller 1</a>
+        <a href="{% url 'cards' %}">Tecnicas de Fichaje</a>
+    </div>
+</nav>
 {% endblock header %}
 
 
 {% block content %}
 
+<div class="presidente-inicio">
+    <div class="presidente-titulo">
+        <h1>Seleccione un presidente</h1>
+    </div>
+    <section class="presidente-grid">
+        {% for presidente in presidentes %}
+        <a href="{% url 'cards' %}?ficha={{presidente.id}}">
+            <div class="presidente-card">
+                <div class="presidente-img-container">
+                    <img src="{% static 'images/presidentes/'%}{{presidente.url}}.jpg" alt="{{presidente.nombre}}">
+                </div>
+                <div class="presidente-data">
+                    <p class="presidente-data-bold">{{presidente.nombre}}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor%}
+    </section>
+</div>
+
+{% if ficha %}
+<div class="fichas-container">
+    <section class="card-page">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-front">
+                    <div class="tape"></div>
+                    <div class="card-header">{{ficha.anversoTipoFicha}}</div>
+                    <div class="card-content">
+                        <p>
+                            <strong>Autor:</strong> {{ficha.anversoAutor}}<br>
+                            <strong>Fecha de publicación:</strong> {{ficha.anversoFechaPublicación}}<br>
+                            <strong>Título:</strong> {{ficha.anversoTitulo}}<br>
+                            <strong>Editorial:</strong> {{ficha.anversoEditorial}}<br>
+                            <strong>Lugar de edición:</strong> {{ficha.anversoLugarEdición}}<br>
+                            <strong>Origen de la información:</strong> {{ficha.anversoOrigenInformación}}
+                        </p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-header">{{ficha.reversoTipo}}</div>
+                    <div class="card-content">
+                        <p>{{ficha.reversoInfo|linebreaksbr}}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="card-btn" onclick="flipCard()"><img src="{% static 'images/arrow-back-card.svg' %}"></button>
+        </div>
+    </section>
+    <section class="xtrainfo-page">
+        <div class="xtrainfo-container">
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Fuente: </div><a href="{{ficha.fuente}}">Haz click aquí</a></div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Tipo de recurso: </div>{{ficha.tipoRecurso}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Clase de fuente: </div>{{ficha.claseFuente}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Palabras claves: </div>{{ficha.palabrasClaves}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Herramienta utilizada en la búsqueda: </div>{{ficha.herramientaBusqueda}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según la procedencia: </div>{{ficha.segunProcedencia}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según obras de consultas por el tipo de información: </div>{{ficha.segunObras}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según la forma en que se presentan: </div>{{ficha.segunForma}}</div>
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según el grado de información: </div>{{ficha.segunGrado}}</div>
+        </div>
+    </section>
+</div>
+{% else %}
+<div class="fichas-container">
+    <section class="card-page">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-front">
+                    <div class="tape"></div>
+                    <div class="card-header">&#8201;</div>
+                    <div class="card-content">
+                        <p>
+                            <strong>SELECCIONE UN PRESIDENTE 😁👆</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-header">&#8201;</div>
+                    <div class="card-content">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <button class="card-btn" onclick="flipCard()"><img src="{% static 'images/arrow-back-card.svg' %}"></button>
+        </div>
+    </section>
+    <section class="xtrainfo-page">
+        <div class="xtrainfo-container">
+            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Fuentes de informacion</div></div>
+        </div>
+    </section>
+</div>
+{% endif %}
+</section>
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/cards.js' %}"></script>
+{% endblock script %}
+

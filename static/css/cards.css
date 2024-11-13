@@ -1,0 +1,273 @@
+@font-face {
+  font-family: "Poppins-regular";
+  src: url("../fonts/Poppins-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("../fonts/Poppins-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-thin";
+  src: url("../fonts/Poppins-Thin.ttf") format("ttf");
+  font-weight: lighter;
+  font-style: normal;
+}
+.theory-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0.692);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.theory-nav-logo {
+  height: 100%;
+}
+.theory-nav-logo img {
+  height: 100%;
+}
+.theory-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.theory-nav-links a {
+  margin: 25px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #00ADB5;
+}
+.theory-nav.small {
+  height: 75px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.theory-nav.small a {
+  font-size: 16px;
+}
+
+.presidente-inicio {
+  width: 100vw;
+  margin-bottom: 150px;
+  margin-top: 180px;
+}
+.presidente-inicio .presidente-titulo {
+  width: 600px;
+  margin: 50px 200px 0;
+  font-size: 22px;
+}
+.presidente-inicio .presidente-titulo h1 {
+  color: white;
+  border-bottom: 2px solid white;
+  line-height: 1;
+}
+.presidente-inicio .presidente-grid {
+  margin-top: 30px;
+  width: 100%;
+  display: grid;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: 150px 150px;
+  row-gap: 25px;
+}
+.presidente-inicio .presidente-grid a {
+  text-decoration: none;
+}
+.presidente-inicio .presidente-grid .presidente-card {
+  width: 170px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.presidente-inicio .presidente-grid .presidente-card .presidente-img-container {
+  position: relative;
+  width: 100%;
+}
+.presidente-inicio .presidente-grid .presidente-card .presidente-img-container img {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10%;
+  overflow: hidden;
+  border: 2px solid black;
+  transition: all 0.4s ease-in-out;
+}
+.presidente-inicio .presidente-grid .presidente-card .presidente-data {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  color: #00ADB5;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  border-radius: 10%;
+  background-color: rgba(0, 0, 0, 0.699);
+  transition: all 0.8s ease-in-out;
+}
+.presidente-inicio .presidente-grid .presidente-card .presidente-data-bold {
+  font-weight: bold;
+}
+.presidente-inicio .presidente-grid .presidente-card:hover .presidente-data {
+  display: none;
+}
+
+.fichas-container {
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  height: -moz-fit-content;
+  height: fit-content;
+  justify-content: center;
+}
+
+.card-page {
+  min-width: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 300px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  perspective: 1000px;
+  width: 900px;
+  min-height: 450px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+.card.flipped {
+  transform: rotateY(180deg);
+}
+.card .card-front,
+.card .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 450px;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+.card .card-front {
+  background-color: #efe4a2;
+}
+.card .card-back {
+  background-color: #efe4a2;
+  transform: rotateY(180deg);
+}
+.card .tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-5deg);
+  width: 80px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.897);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  z-index: 10;
+}
+.card .card-header {
+  font-weight: bold;
+  font-size: 34px;
+  border-bottom: 2px solid #141414;
+  padding: 10px 15px 5px;
+  background-color: #efe4a2;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card .card-content {
+  font-size: 20px;
+  line-height: 1.7em;
+  min-height: 400px;
+  padding: 0 10px;
+  margin-top: 4px;
+  background-image: repeating-linear-gradient(to bottom, #efe4a2, #efe4a2 calc(1.5em - 1px), #141414 calc(1.5em - 1px), #141414 1.5em);
+  background-size: 700px 1.7em;
+  background-position-y: 0;
+  border-radius: 10px;
+}
+.card .card-content p {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: normal;
+  word-wrap: break-word;
+  background-color: transparent;
+}
+
+.card-btn {
+  display: flex;
+  position: relative;
+  right: 90px;
+  top: 5px;
+  align-self: flex-end;
+  justify-content: center;
+  margin-left: 25px;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  border: 2px solid black;
+  background-color: #00ADB5;
+}
+.card-btn img {
+  display: flex;
+  align-self: center;
+  width: 80%;
+  height: 80%;
+  background-color: transparent;
+}
+
+.xtrainfo-page {
+  min-width: 450px;
+  display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.xtrainfo-container {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  border: 2px solid #00ADB5;
+  border-radius: 25px;
+  padding: 30px;
+}
+.xtrainfo-container .xtrainfo-parrafo {
+  color: white !important;
+  margin: 10px 0px;
+}
+.xtrainfo-container .xtrainfo-parrafo a {
+  color: white;
+  font-weight: bold;
+}
+.xtrainfo-container .xtrainfo-parrafo-bold {
+  color: #00ADB5;
+  font-weight: bold;
+}/*# sourceMappingURL=cards.css.map */

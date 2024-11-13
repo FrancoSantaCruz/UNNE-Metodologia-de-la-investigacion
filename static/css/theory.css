@@ -1,0 +1,226 @@
+@font-face {
+  font-family: "Poppins-regular";
+  src: url("../fonts/Poppins-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-bold";
+  src: url("../fonts/Poppins-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins-thin";
+  src: url("../fonts/Poppins-Thin.ttf") format("ttf");
+  font-weight: lighter;
+  font-style: normal;
+}
+.theory-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0.692);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+.theory-nav-logo {
+  height: 100%;
+}
+.theory-nav-logo img {
+  height: 100%;
+}
+.theory-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.theory-nav-links a {
+  margin: 25px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #00ADB5;
+}
+.theory-nav.small {
+  height: 75px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.theory-nav.small a {
+  font-size: 16px;
+}
+
+.fuentes {
+  width: 80%;
+  margin: 150px auto 0;
+}
+.fuentes-titulo {
+  font-size: 28px;
+  color: #EEEEEE;
+  width: 450px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.fuentes-subtitulo {
+  font-size: 22px;
+  color: #EEEEEE;
+  width: 450px;
+  border-bottom: 1px solid #EEEEEE;
+}
+.fuentes-texto {
+  margin: 25px 0;
+  font-size: 16px;
+  color: #EEEEEE;
+}
+.fuentes-obras-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.fuentes-obras {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border: 2px solid #00ADB5;
+  background-color: transparent;
+  margin: 25px 50px 75px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.fuentes-obras-titulo {
+  color: #00ADB5;
+  font-weight: bold;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.fuentes-obras-texto {
+  color: #EEEEEE;
+  margin: 10px 0;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 50px;
+}
+
+.modal-card {
+  padding: 20px;
+  background-color: transparent;
+  border: 2px solid #00ADB5;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out;
+}
+.modal-card h3 {
+  color: #00ADB5;
+}
+.modal-card p {
+  color: white;
+  transition: transform 0.6s ease-in-out;
+}
+
+.modal-card:hover {
+  transform: scale(1.05);
+  background-color: #EEEEEE;
+}
+.modal-card:hover p {
+  color: black;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #393E46;
+  padding: 35px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+}
+.modal-content h2 {
+  color: #00ADB5;
+  margin: 0 0 20px 0;
+}
+.modal-content p {
+  color: #EEEEEE;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #00ADB5;
+}
+
+.accordion {
+  position: absolute;
+  width: 80%;
+  margin: 25px auto;
+  border: 1px solid #00ADB5;
+  border-radius: 5px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #00ADB5;
+}
+
+.accordion-header {
+  padding: 15px;
+  background-color: #393E46;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.accordion-header h3 {
+  color: #00ADB5;
+}
+
+.accordion-header:hover {
+  background-color: #EEEEEE;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background-color: #EEEEEE;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-content p {
+  margin: 15px 0;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 1000px;
+  padding: 25px;
+}
+
+.tecnicas-fichaje {
+  width: 80%;
+  margin: 150px auto 500px;
+}/*# sourceMappingURL=theory.css.map */

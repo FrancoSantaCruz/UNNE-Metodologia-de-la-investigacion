@@ -1,16 +1,74 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block styles %}{% endblock styles %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock styles %}
 
-{% block title %}{% endblock title %}
+{% block title %}INICIO{% endblock title %}
 
 
 {% block header %}
-<h1>HOME</h1>
+<section class="header-inicio">
+    <img class="header-logo-unne" src="{% static 'images/logo-eco-unne-horizontal.svg'%}" alt="logo unne facultad de ciencias economicas">
+    <img class="header-logo-grupo" src="{% static 'images/logo-grupo.png'%}" alt="logo grupo 3 el rejunte">
+    <div class="header-titulo animate__animated animate__fadeInLeft">
+        <h1>METODOLOGIA</h1>
+        <h1>DE LA</h1>
+        <h1>INVESTIGACION</h1>
+    </div>
+    <nav class="header-navbar">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'theory' %}">Taller 1</a>
+        <a href="{% url 'cards' %}">Tecnicas de Fichaje</a>
+    </nav>
+</section>
 {% endblock header %}
 
-
 {% block content %}
+<section class="taller-inicio">
+    <div class="taller-titulo">
+        <h1>Taller 1</h1>
+        <span class="taller-titulo-subrayado"></span>
+    </div>
+    <div class="inflacion-wrapper animate__animated scroll-animate">
+        <div class="inflacion-container">
+            <div class="inflacion-image">
+                <img src="{% static 'images/argentina_inflation_graphic.png' %}" alt="Inflación en Argentina">
+            </div>
+            <div class="inflacion-content">
+                <h2>Taller 1.- De exploración. La búsqueda de materiales, uso e identificación de fuentes científicas (digitales y física).</h2>
+                <p>Las fuentes de información abarcan una amplia gama de recursos que nos permiten acceder al conocimiento en diferentes áreas y formatos. Desde fuentes informativas que indican dónde encontrar información específica, hasta recursos personales, institucionales, bibliográficos, etc. La técnica del fichaje es fundamental en el proceso de investigación, permitiendo organizar y sistematizar la información.</p>
+                <a href="{% url 'theory' %}"><button>LEER MÁS</button></a>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section class="fichas-inicio">
+    <div class="fichas-titulo">
+        <h1>Tecnicas de Fichaje</h1>
+    </div>
+
+    <section class="fichas-grid">
+        {% for ficha in fichas %}
+        <a href="{% url 'cards' %}?ficha={{ficha.id}}">
+            <div class="fichas-card">
+                <div class="fichas-img-container">
+                    <img src="{% static 'images/presidentes/'%}{{ficha.url}}.jpg" alt="{{ficha.nombre}}">
+                </div>
+                <div class="fichas-data">
+                    <p>{{ficha.periodo}}</p>
+                    <p class="fichas-data-bold">{{ficha.nombre}}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor%}
+    </section>
+
+</section>
 {% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock script %}
+

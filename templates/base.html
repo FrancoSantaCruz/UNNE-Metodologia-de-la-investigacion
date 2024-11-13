@@ -5,6 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
     {% block styles %}{% endblock styles %}
     <title>{% block title %}{% endblock title %} | GRUPO 3</title>
 </head>
@@ -18,9 +22,40 @@
         {% block content %}
         {% endblock content %}
     </main>
-    <footer>
-
+    <footer class="inicio-footer">
+        <div class="inicio-logogrupo">
+            <img src="{% static 'images/logo-grupo.png' %}" alt="logo grupo 3">
+            <span></span>
+        </div>
+        <div class="inicio-sitemap">
+            <div class="inicio-sitemap-izq">
+                <a href="{% url 'home' %}">Página principal</a>
+                <a href="{% url 'theory' %}">Taller 1</a>
+                <a href="{% url 'cards' %}">Técnicas de Fichaje</a>
+            </div>
+            <div class="inicio-sitemap-der">
+                <p>Fichas:</p>
+                <a href="{% url 'cards' %}?ficha=1">Raúl Ricardo Alfonsín</a>
+                <a href="{% url 'cards' %}?ficha=2">Carlos S. Menem</a>
+                <a href="{% url 'cards' %}?ficha=3">Fernando De la Rúa</a>
+                <a href="{% url 'cards' %}?ficha=4">Puerta - Rodríguez Saá - Camaño</a>
+                <a href="{% url 'cards' %}?ficha=5">Eduardo Duhalde</a>
+                <a href="{% url 'cards' %}?ficha=6">Néstor Kirchner</a>
+                <a href="{% url 'cards' %}?ficha=7">Cristina Fernández de Kirchner</a>
+                <a href="{% url 'cards' %}?ficha=8">Mauricio Macri</a>
+                <a href="{% url 'cards' %}?ficha=9">Alberto Fernández</a>
+                <a href="{% url 'cards' %}?ficha=10">Javier Milei</a>
+            </div>
+        </div>
+        <div class="inicio-logounne">
+            <span></span>
+            <img src="{% static 'images/logo-eco-unne-horizontal.svg' %}" alt="logo unne facultad ciencias económicas">
+        </div>
     </footer>
+    <div class="copyright-container">
+        <p>&copy; 2024 <a href="https://www.linkedin.com/in/franco-santa-cruz/">Franco Santa Cruz</a>. All rights reserved.</p>
+    </div>
+    {% block script %} {% endblock script %}
 </body>
 
 </html>
