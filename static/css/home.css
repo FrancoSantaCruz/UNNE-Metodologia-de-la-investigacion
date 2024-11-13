@@ -30,7 +30,7 @@
 .header-inicio::before {
   position: absolute;
   content: "";
-  width: 100%;
+  width: 100vw;
   height: 1080px;
   background: rgba(34, 40, 49, 0.7);
   background: linear-gradient(90deg, rgba(34, 40, 49, 0.7) 30%, rgba(34, 40, 49, 0.85) 65%, #222831 80%);
@@ -73,7 +73,7 @@
   text-decoration: underline;
   color: #EEEEEE;
   font-size: 28px;
-  margin: 25px 15px;
+  margin: 25px 0;
 }
 
 /**

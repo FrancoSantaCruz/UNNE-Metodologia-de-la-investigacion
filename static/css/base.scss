@@ -1,9 +1,13 @@
 @import "./variables.scss";
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 :root {
@@ -55,7 +59,7 @@ h1 {
     display: grid;
     grid-template-columns: 2fr 3fr 2fr;
     height: 400px;
-    width: 100%;
+    width: 100vw;
     background-color: $white;
 
     & span {
