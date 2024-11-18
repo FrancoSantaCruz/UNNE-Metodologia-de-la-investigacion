@@ -320,7 +320,7 @@ def sobre_nosotros_view(request):
             "carrera": "Licenciatura en Economía",
             "apellido": "Piedrabuena",
             "nombre": "Martina Lilian",
-            "img": "PiedrabuenaMartinaLilian",
+            "img": "PiedrabuenaMartinaLilian3",
             "gmail": "piedrabuenam21@gmail.com",
             "instagram": "mrtnp_"
         },
