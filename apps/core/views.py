@@ -274,3 +274,71 @@ def cards_view(request):
         ficha_seleccionada = next((ficha for ficha in fichas if ficha["id"] == ficha_id), None)    
 
     return render(request, "cards.html", {"ficha": ficha_seleccionada, "presidentes": presidentes})
+
+
+def sobre_nosotros_view(request):
+    
+    ctx = [
+        {
+            "id": "1",
+            "carrera": "Contador Público",
+            "apellido": "Mansilla",
+            "nombre": "Iris",
+            "img": "MansillaIris",
+            "gmail": "mansillairis612@gmail.com",
+            "instagram": "iris_jmansilla"
+        },
+        {
+            "id": "2",
+            "carrera": "Contador Público",
+            "apellido": "Martínez Borda",
+            "nombre": "Victoria Alejandra",
+            "img": "MartínezBordaVictoriaAlejandra",
+            "gmail": "vicky080500@hotmail.con",
+            "instagram": "victoriamborda"
+        },
+        {
+            "id": "3",
+            "carrera": "Contador Público",
+            "apellido": "Oviedo",
+            "nombre": "Sergio",
+            "img": "OviedoSergio",
+            "gmail": "sergiodav_@hotmail.com",
+            "instagram": "serg_oviedo"
+        },
+        {
+            "id": "4",
+            "carrera": "Contador Público",
+            "apellido": "Piaggio",
+            "nombre": "María Belén",
+            "img": "PiaggioMaríaBelén",
+            "gmail": "Belenpiaggio7@gmail.com",
+            "instagram": "belenpiaggio"
+        },
+        {
+            "id": "5",
+            "carrera": "Licenciatura en Economía",
+            "apellido": "Piedrabuena",
+            "nombre": "Martina Lilian",
+            "img": "PiedrabuenaMartinaLilian",
+            "gmail": "piedrabuenam21@gmail.com",
+            "instagram": "mrtnp_"
+        },
+        {
+            "id": "6",
+            "carrera": "Contador Público",
+            "apellido": "Rea",
+            "nombre": "Eduardo Gabriel",
+            "img": "ReaEduardoGabriel",
+            "gmail": "Eduardogabrielrea@gmail.com",
+            "instagram": "Gabrielrea28"
+        },
+    ]
+
+    miembro_id = request.GET.get("member")
+    miembro_selected = ctx[0]
+
+    if miembro_id: 
+        miembro_selected = next((miembro for miembro in ctx if miembro["id"] == miembro_id), ctx[0])    
+
+    return render(request, "sobre_nosotros.html", {'integrantes': ctx, "miembro": miembro_selected})

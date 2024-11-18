@@ -16,16 +16,43 @@
         <a href="{% url 'home' %}">Inicio</a>
         <a href="{% url 'theory' %}">Taller 1</a>
         <a href="{% url 'cards' %}">Tecnicas de Fichaje</a>
+        <a href="{% url 'sobre_nosotros' %}">Sobre nosotros</a>
     </div>
 </nav>
 {% endblock header %}
 
 
 {% block content %}
+<div class="nav-fill">
+    <div class="cards-titulos">
+        <h1>MONOGRAFÍA</h1>
+    </div>
+</div>
+<section class="introduccion-container">
+    <div class="introduccion-pdf">
+        <embed src="{% static 'Monografia.pdf' %}" type="application/pdf" class="introduccion-embed">
+        </embed>
+    </div>
+    <div class="introduccion-informacion">
+        <h4>¿Que es el fichaje?</h4>
+        <p>El fichaje es una técnica por la cual se construye un instrumento que nos permite guardar en forma escrita,
+            de manera sencilla, lo más completa posible, la información que será necesaria y utilizada a lo largo de
+            toda la investigación.</p>
+        <h4>¿Para qué utilizamos el fichaje en nuestro trabajo?</h4>
+        <p>Utilizamos la técnica del fichaje a través de las fichas para simplificar la información de la monografía y
+            que se pueda encontrar la información requerida de manera fácil y sencilla.</p>
+        <h4>¿Que es una monografía?</h4>
+        <p>Una monografía es un trabajo escrito que expone un tema específico de manera metódica y exhaustiva, con el
+            objetivo de informar sobre un nuevo conocimiento o enfoque de un asunto.</p>
+        <h4>¿Cómo dividimos las fichas?</h4>
+        <p>Cada una de las fichas está dividida por gobierno y sus respectivas políticas antiinflacionarias.</p>
+    </div>
+</section>
+
 
 <div class="presidente-inicio">
     <div class="presidente-titulo">
-        <h1>ANÁLISIS DE LAS POLÍTICAS ANTIINFLACIONARIAS EN ARGENTINA (1983- 2024)</h1>
+        <h1>TÉCNICAS DE FICHAJE</h1>
     </div>
     <section class="presidente-grid">
         {% for presidente in presidentes %}
@@ -74,15 +101,35 @@
     </section>
     <section class="xtrainfo-page">
         <div class="xtrainfo-container">
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Fuente: </div><a href="{{ficha.fuente}}">Haz click aquí</a></div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Tipo de recurso: </div>{{ficha.tipoRecurso}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Clase de fuente: </div>{{ficha.claseFuente}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Palabras claves: </div>{{ficha.palabrasClaves}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Herramienta utilizada en la búsqueda: </div>{{ficha.herramientaBusqueda}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según la procedencia: </div>{{ficha.segunProcedencia}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según obras de consultas por el tipo de información: </div>{{ficha.segunObras}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según la forma en que se presentan: </div>{{ficha.segunForma}}</div>
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Según el grado de información: </div>{{ficha.segunGrado}}</div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Fuente: </div><a href="{{ficha.fuente}}">Haz click aquí</a>
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Tipo de recurso: </div>{{ficha.tipoRecurso}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Clase de fuente: </div>{{ficha.claseFuente}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Palabras claves: </div>{{ficha.palabrasClaves}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Herramienta utilizada en la búsqueda: </div>
+                {{ficha.herramientaBusqueda}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Según la procedencia: </div>{{ficha.segunProcedencia}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Según obras de consultas por el tipo de información: </div>
+                {{ficha.segunObras}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Según la forma en que se presentan: </div>{{ficha.segunForma}}
+            </div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Según el grado de información: </div>{{ficha.segunGrado}}
+            </div>
         </div>
     </section>
 </div>
@@ -112,7 +159,9 @@
     </section>
     <section class="xtrainfo-page">
         <div class="xtrainfo-container">
-            <div class="xtrainfo-parrafo"><div class="xtrainfo-parrafo-bold">Fuentes de informacion</div></div>
+            <div class="xtrainfo-parrafo">
+                <div class="xtrainfo-parrafo-bold">Fuentes de informacion</div>
+            </div>
         </div>
     </section>
 </div>
@@ -123,4 +172,3 @@
 {% block script %}
 <script src="{% static 'js/cards.js' %}"></script>
 {% endblock script %}
-

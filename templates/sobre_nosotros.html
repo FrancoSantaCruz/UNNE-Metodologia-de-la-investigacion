@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/sobre_nosotros.css' %}">
+{% endblock styles %}
+
+{% block title %} SOBRE NOSOTROS {% endblock title %}
+
+{% block header %}
+<nav class="theory-nav">
+    <div class="theory-nav-logo">
+        <img src="{% static 'images/logo-grupo.png' %}" alt="logo grupo 3">
+    </div>
+    <div class="theory-nav-links">
+        <a href="{% url 'home' %}">Inicio</a>
+        <a href="{% url 'theory' %}">Taller 1</a>
+        <a href="{% url 'cards' %}">Tecnicas de Fichaje</a>
+        <a href="{% url 'sobre_nosotros' %}">Sobre nosotros</a>
+    </div>
+</nav>
+{% endblock header %}
+
+{% block content %}
+
+<div class="nav-fill">
+    <div class="sobre-nosotros-titulos">
+        <h1>CONOCÉ MÁS SOBRE NOSOTROS</h1>
+    </div>
+</div>
+
+
+<section class="sobre-nosotros">
+    <div class="sobre-nosotros-container">
+        <p class="sobre-nosotros-texto">
+            Somos alumnos de la cátedra de Metodología de la Investigación, desarrollando un
+            trabajo monográfico acerca
+            de
+            las políticas inflacionarias implementadas en los gobiernos desde 1985 hasta la actualidad en nuestro pais.
+        </p>
+        <p class="sobre-nosotros-texto">
+            Nuestro interés en el tema se debe a su gran relevancia y a la manera en que afecta a todos los argentinos,
+            por
+            lo que consideramos importante analizarlo desde la perspectiva de los gobiernos y sus políticas, con el
+            objetivo
+            de poder conocer y encontrar una explicación de por qué es tan difícil salir del círculo vicioso de ajustes,
+            déficit y recesiones para poder combatir la inflación.
+        </p>
+    </div>
+</section>
+
+
+<div class="members">
+    <section class="members-list">
+        <h3 class="members-list-title">Autores</h2>
+            {% for integrante in integrantes %}
+            <p><a href="{% url 'sobre_nosotros' %}?member={{integrante.id}}"
+                    class="members-list-item">{{integrante.apellido}} {{integrante.nombre}} ←</a></p>
+            {% endfor %}
+    </section>
+    <section class="members-detail">
+        <div class="members-detail-container">
+            <div class="members-detail-image">
+                <div class="members-detail-rrss">
+                    <a href="https://mail.google.com/mail/?view=cm&to={{ miembro.gmail }}&su=Me contacto desde tu página web!"
+                        target="_blank"><img src="{% static 'images/google.svg' %}" alt="gmail"></a>
+                    <a href="https://www.instagram.com/{{miembro.instagram}}/"><img
+                            src="{% static 'images/instagram.svg' %}" alt="instagram"></a>
+                </div>
+                <div class="border">
+                </div>
+                <img src="{% static 'images/integrantes/' %}{{miembro.img}}.jpg" alt="miembro"
+                    class="members-detail-image-pic">
+            </div>
+            <div class="members-detail-info">
+                <p>Estudiante de <strong>{{miembro.carrera}}</strong></p>
+                <h1>{{miembro.apellido}} {{miembro.nombre}}</h1>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/sobre_nosotros.js' %}"></script>
+{% endblock script %}

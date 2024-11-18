@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-.theory-nav{
+.theory-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,6 +20,7 @@
             height: 100%;
         }
     }
+
     &-links {
         display: flex;
         align-items: center;
@@ -33,6 +34,7 @@
             color: $aqua;
         }
     }
+
     &.small {
         height: 75px;
         background-color: rgba(255, 255, 255, 0.9);
@@ -43,11 +45,76 @@
     }
 }
 
+.nav-fill {
+    margin-top: 180px;
+}
+
+.cards-titulos {
+    width: fit-content;
+    margin: 50px auto;
+    font-size: 18px;
+
+    & h1 {
+        color: white;
+        border-bottom: 2px solid white;
+        line-height: 1;
+    }
+}
+
+
+
+.introduccion-container {
+    margin: 0 auto 0;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: $aqua;
+    border-radius: 25px;
+
+    & .introduccion-informacion {
+        padding: 25px 50px;
+        margin-left: 25px;
+        border: 2px solid $aqua;
+        border-radius: 10px;
+        height: fit-content;
+
+        & h4 {
+            color: $bg-main;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: larger;
+        }
+
+        & p {
+            color: $white;
+        }
+    }
+
+    & .introduccion-pdf {
+        display: flex;
+        justify-content: right;
+        width: 100%;
+        height: 600px;
+
+        & .introduccion-embed {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+    }
+}
+
+
+
+
+
 
 .presidente-inicio {
     width: 100%;
     margin-bottom: 150px;
-    margin-top: 180px;
+    margin-top: 90px;
 
     & .presidente-titulo {
         width: fit-content;
@@ -102,7 +169,7 @@
                 }
             }
 
-            
+
 
             & .presidente-data {
                 display: flex;
@@ -126,11 +193,11 @@
                     font-weight: bold;
                 }
 
-    
+
             }
 
             &:hover {
-                & .presidente-data{
+                & .presidente-data {
                     display: none;
                 }
             }
@@ -141,7 +208,7 @@
 
 
 
-.fichas-container{
+.fichas-container {
     display: flex;
     // grid-template-columns: 6fr 4fr;
     flex-wrap: wrap;
@@ -151,19 +218,19 @@
 
 
 
-.card-page{
+.card-page {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 300px;
     width: 100%;
-    max-width: 900px; 
+    max-width: 900px;
 }
 
 .card-container {
     display: flex;
     flex-direction: row;
-    perspective: 1000px; 
+    perspective: 1000px;
     width: 900px;
     min-height: 450px;
 }
@@ -172,7 +239,7 @@
     position: relative;
     width: 100%;
     height: 100%;
-    transform-style: preserve-3d; 
+    transform-style: preserve-3d;
     transition: transform 0.8s;
 
     &.flipped {
@@ -186,7 +253,7 @@
         left: 0;
         width: 100%;
         min-height: 450px;
-        backface-visibility: hidden; 
+        backface-visibility: hidden;
         border-radius: 10px;
     }
 
@@ -196,7 +263,7 @@
 
     .card-back {
         background-color: $yellow-ficha;
-        transform: rotateY(180deg); 
+        transform: rotateY(180deg);
     }
 
     .tape {
@@ -274,7 +341,7 @@
 
 // EXTRA INFORMATION
 
-.xtrainfo-page{
+.xtrainfo-page {
     width: 100%;
     min-width: 300px;
     max-width: 450px;
@@ -303,4 +370,3 @@
         }
     }
 }
-
